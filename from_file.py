@@ -1,8 +1,8 @@
 import numpy as np
 
 
-def get_lines(file):
-    A_temp = []
+def get_data(file):
+    data = []
     c = []
     b = []
     lines = [line.replace('\n', '') for line in file]
@@ -11,7 +11,9 @@ def get_lines(file):
             c = [float(i) for i in line[line.find('[') + 1:line.find(']')].split()]
         elif 'b=' in line:
             b = [float(i) for i in line[line.find('[') + 1:line.find(']')].split()]
+            for j in range(len(b)):
+                data[j].append(b[j])
         else:
-            A_temp.append([float(i) for i in line[line.find('[') + 1:line.find(']')].split()])
-    A = np.array(A_temp, dtype=np.float)
+            data.append([float(i) for i in line[line.find('[') + 1:line.find(']')].split()])
+    A = np.array(data, dtype=np.float)
     return A, c, b
