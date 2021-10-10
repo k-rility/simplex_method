@@ -8,10 +8,18 @@ if __name__ == '__main__':
     print(res.f)
     print(res.perm_col())
     print(res.perm_row())
-    res.simplex_iteration()
-    print(res.A)
-    # print(res.get_simplex_table())
-    # f = res.get_f()
-    # print(res.get_min())
-    # print(f)
-    # print(res.get_pivot())
+    # res.simplex_iteration()
+    # smp = res.get_simplex_table()
+    # print()
+    # for i in range(len(smp)):
+    #     print(smp[i])
+    # print()
+    # st = res.div_row_and_col()
+    # for i in range(len(st)):
+    #     print(st[i])
+
+    print()
+
+    jt = res.jordan_transform()
+    for i in range(len(jt)):
+        print(jt[i])
