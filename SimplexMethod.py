@@ -1,4 +1,5 @@
 import copy
+from tabulate import tabulate
 
 
 class SimplexMethod:
@@ -59,3 +60,15 @@ class SimplexMethod:
             self.perm_col()
             self.perm_row()
             self.jordan_transform()
+            print()
+            self.__repr__()
+
+    def __repr__(self):
+
+        column_list = ['    '] + [f'    x{i}    ' for i in range(1, len(self.simplex_table))] + ['  C   ']
+        value_list = [[f'x{i}'] for i in range(1, 4)] + [['F']]
+        for i in range(len(value_list)):
+            for j in range(len(value_list)):
+                value_list[i].append(self.simplex_table[i][j])
+
+        return print(tabulate(value_list, column_list, tablefmt='grid', stralign='center'))

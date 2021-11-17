@@ -8,6 +8,6 @@ if __name__ == '__main__':
         print(res.simplex_table[i])
     print()
     res.iteration()
-    for i in range(len(res.simplex_table)):
-        print(res.simplex_table[i])
-    print()
+    # for i in range(len(res.simplex_table)):
+    #     print(res.simplex_table[i])
+    # print(res.__repr__())
